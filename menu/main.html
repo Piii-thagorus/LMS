@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nansidlela</title>
+        <script src="jquery-3.5.1.js"></script>
+
+        <style>
+
+            body {
+                background-image: url("../pics/homebg.jpg");
+                background-size: 100%;
+            }
+
+            .hor{display: inline-block;
+            }
+
+             .hor li{float:left;
+            display: block;
+            padding: 50px;
+           
+           border-bottom: 2px solid orange;
+           border-radius: 100px;
+            //background-color: white;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+           
+            min-width: 100px;
+            }
+
+            td h1 {border-bottom: 3px solid;
+            //border-top: 5px solid #b0e0e6;
+            border-radius: 50px;}
+
+        /*Heading font*/
+        h1{text-align: center;
+        font-size: 50px;
+        color: orange;
+        }
+
+        /*Links*/
+        a:link{text-decoration: none;}
+        .hor a{color: #b0e0e6;}
+        .describe a{color: white;}
+
+
+        /*Table start*/
+        .images td img{border-bottom: 10px solid #b0e0e6;
+        border-right: 10px solid orange;
+        border-top: 10px solid #b0e0e6;
+        border-left: 10px solid orange;
+        border: none;
+        border-radius: 40px;
+        }
+
+        .describe td{font-weight: bold;
+        color: white;
+        font-size: 25px;
+       // background-color: orange;
+        border: 2px solid orange;
+        border-radius: 40px
+        }
+
+        article{text-align: center;
+        padding: 70px;}
+
+    </style>
+    </head>
+
+    <body>
+
+       <header class="hor">
+
+       </header>
+
+    <article>
+
+         <ul class="hor">
+                        <li><img src="../pics/logo.png" width="100px" height="100px"></li>
+                        <li><a href="../forms/welcome.php">Register</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="login.php">Log In</a></li>
+                    </ul>
+        <table align="center">
+            <tr>
+                <td colspan="3">
+
+                </td>
+            </tr>
+            <tr><td colspan="3"> <h1>Welcome to Educo</h1></td></tr>
+            <tr class="images">
+                <td><a href="../Home/PA.html"><img src="icons/pa.png" height="200px" width="200px" id="announce"></a> </td>
+                <td><a href="../Home/stuff.html"><img src="icons/stuff.png" height="200px" width="350px" id="stuff"></a> </td>
+                <td><a href="../Home/co.html"><img src="icons/co.png" height="350px" width="350px" id="com"></a> </td>
+            </tr>
+
+            <tr class="describe">
+                <td><a href="../Home/PA.html">Public announcements</a> </td>
+                <td><a href="../Home/stuff.html">Our stuff</a> </td>
+                <td><a href="../Home/co.html">Community Outreach</a> </td>
+            </tr>
+
+            <tr class="images">
+                <td><a href="../Home/sports.html"><img src="icons/sports.png" height="350px" width="350px" id="sport"></a> </td>
+                <td><a href="../Home/donations.html"><img src="icons/donation.png" height="350px" width="350px" id="donation"></a> </td>
+                <td><a href="../Home/suggestions.html"><img src="icons/career.png" height="350px" width="350px" id="suggest"></a> </td>
+            </tr>
+
+            <tr class="describe">
+                <td><a href="../Home/sports.html">Sports</a> </td>
+                <td><a href="../Home/donations.html">Donations</a> </td>
+                <td><a href="../Home/suggestions.html">Career Outreach</a></td>
+            </tr>
+
+        </table>
+    </article>
+    <script>
+
+        //image width and height
+        $(".images img").height(200);
+        $(".images img").width(200);
+
+        //media queries
+        var main = window.matchMedia("(max-width: 992px)");
+        if(main.matches){
+        var im = $(".images td");
+        var des = $(".describe td");
+
+        var x = 1;
+        while(x<im.length){
+        im.eq(x).hide()
+        des.eq(x).hide();
+        $(".images tr").eq(x).remove();
+
+        var image_src = "<tr class='images'><td> <a href='" + $(".images a").eq(x).attr("href") + "'> <img src='" +
+        $(".images a img").eq(x).attr("src") + "'> </a></td></tr>";
+
+        var des_src = "<tr class='describe'><td> <a href='" + $(".images a").eq(x).attr("href") + "'>" +
+        $(".describe td").eq(x).text() + "</a></td></tr>";
+
+        var newImage = im.eq(x-1).parent().parent().parent().append(image_src);
+        var newDescription = im.eq(x-1).parent().parent().parent().append(des_src);
+        x++;
+        }
+        $(".images img ").height(200);
+        $("images img").width(400);
+        }
+
+//hovering of table
+var im = $(".images td");
+var des = $(".describe td");
+
+for(let x = 0; x<im.length; x++){
+im.eq(x).mouseenter(function(){
+    $(this).css("filter", "grayscale(100%)");
+    des.eq(x).css("filter", "grayscale(100%)");
+    });
+im.eq(x).mouseleave(function(){
+    $(this).css("filter", "grayscale(0%)");
+    des.eq(x).css("filter", "grayscale(0%)");
+    });
+}
+
+for(let x = 0; x<im.length; x++){
+des.eq(x).mouseenter(function(){
+    $(this).css("filter", "grayscale(100%)");
+    im.eq(x).css("filter", "grayscale(100%)");
+    });
+des.eq(x).mouseleave(function(){
+    $(this).css("filter", "grayscale(0%)");
+    im.eq(x).css("filter", "grayscale(0%)");
+    });
+}
+
+//hovering of menu
+var menu = $(".hor li");
+for(let x=1; x<menu.length; x++){
+    menu.eq(x).mouseenter(function(){
+        $(this).css("filter", "grayscale(100%)");}
+    );
+    menu.eq(x).mouseleave(function(){
+        $(this).css("filter", "grayscale(0%)");}
+    );
+}
+
+
+    </script>
+    </body>
+</html>

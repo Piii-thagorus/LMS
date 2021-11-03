@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.5.1.js"></script>
+    <title>Contact us</title>
+
+    <style>
+        a:link{text-decoration: none;}
+        header a{color: orange;}
+
+        header ul li{display: inline-block;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid orange;
+            border-radius: 400px;
+            background-color: white;
+            color: #b0e0e6;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange;
+            min-width: 90px;
+            }
+
+        header{display: inline-block;
+       margin-right: 15%;
+       margin-left: 15%;}
+
+             h1{text-align: center;
+        font-size: 50px;
+        color: #b0e0e6;
+        text-shadow: -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange;}
+
+        form input{ margin: auto;
+        padding: 10px;
+       }
+
+       td div{color: orange;
+       font-weight: bold;
+       font-size: 20px;}
+
+    </style>
+</head>
+<body>
+     <header id="hor">
+        <ul>
+            <li><img src="../pics/logo.png" width="100px" height="100px"></li>
+            <li><a href="main.html"> Home </a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.php">Log In</a></li>
+        </ul>
+     </header>
+
+    <article>
+        <h1>You can contact us using the following:</h1>
+
+        <table align="center">
+            <tr>
+                <td class="image"><img src="../pics/phone.jpg"></td>
+                <td class="details"> <div>Call</div> <br/> Telephone: (013) 987 7035 <br/>Dialing code: +27 <br/>
+            Time zone: GMT+02:00 South Africa Standard Time</td>
+            </tr>
+            <tr>
+                <td class="image"><img src="../pics/post.jpg"></td>
+                <td class="details"><div>Postal Address</div><br/> Address: Private Bag X4010 Empumalanga <br/>
+            Zip/Postal Code: 0458</td>
+            </tr>
+            <tr>
+                <td class="image"><img src="../pics/mail.jpg"></td>
+                <td class="details"><div>Email</div> <br/>Address:  <a href="">nansidlela@school.com</a></td>
+            </tr>
+
+        </table>
+    </article>
+<script>
+
+//hovering of menu
+var menu = $("#hor li");
+for(let x=1; x<menu.length; x++){
+    menu.eq(x).mouseenter(function(){
+        $(this).css("filter", "grayscale(100%)");}
+    );
+    menu.eq(x).mouseleave(function(){
+        $(this).css("filter", "grayscale(0%)");}
+    );
+}
+</script>
+</body>
+</html>

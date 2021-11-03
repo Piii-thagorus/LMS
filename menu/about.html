@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <script src="jquery-3.5.1.js"></script>
+
+    <style>
+
+        body {
+            background-image: url("../pics/aboutbg.jpg");
+            background-size: 100%;
+        }
+
+
+        a:link{text-decoration: none;
+               color: white;
+        }
+        #hor a{color: orange;}
+
+        h1{
+        display: inline;
+        color:azure;
+        text-align: center;
+        
+        border-bottom: 1px solid orange;
+        border-radius: 80px;}
+
+
+            #hor ul li{display: inline-block;
+            padding: 50px;
+            border-bottom: 2px solid orange;
+            border-radius: 100px;
+            
+            color: orange;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange,
+                       -1px -1px 0 orange;
+            min-width: 100px;}
+
+       td div{color: orange;
+       font-weight: bold;
+       font-size: 20px;}
+
+        .para {
+        color: white;
+        }
+
+        address {
+        color:white;
+        }
+
+            address a {
+            color: darkorange;
+            font-size: 18px;
+            }
+    </style>
+
+</head>
+<body>
+
+    <header class="Hor">
+
+     </header>
+
+    <article style="text-align: center;">
+        <table align="center">
+            <tr>
+                <td id="hor"><ul>
+                     <li><img src="../pics/logo.png" width="100px" height="100px"></li>
+                    <li><a href="main.html"> Home </a></li>
+                    <li><a href="../forms/welcome.php">Register</a></li>
+                    <li><a href="login.php">Log In</a></li>
+
+        </ul>
+                </td>
+            </tr>
+        </table >
+        <h1 align="center">About us</h1>
+        <div class="para">
+            <p>Nansidlela is a public school founded in 1980 in the Boekenouthoek area,  near the town of Kwaggafontein,
+            in the Mpumalanga province.</p>
+            <p>The school offers English-medium lessons and IsiNdebele as its home-language to the local community which is
+            dominated by Ndebele speaking people.</p>
+            <p>The name <i>Nansidlela</i> means <i><q>This is the way</q></i> in IsiZulu and can be interpreted as <i><q>"Nasindlela"</q></i> in IsiNdebele</p>
+            <p>The school has won a number of awards for its consistency in academic performance and involvement in sports and other
+            curricular activities</p><br/>
+        </div>
+
+        <br/><h1 align="center">You can contact us using the following:</h1>
+
+        <table align="center">
+            <tr>
+                <td class="image"><img src="../pics/phone.png" height="100"></td>
+                <td>
+                    <div>Call</div> <br/>
+                    <address>
+                        Telephone: (013) 987 7035<br/>
+                        Dial code: +27<br/>
+                        Time zone: GMT+02:00 South Africa Standard Time
+                    </address>
+                </td>
+            </tr>
+            <tr>
+                <td class="image"><img src="../pics/post.png" height="100"></td>
+                <td>
+                    <div>Postal Address</div>
+                    <address>
+                        Address:<br/>
+                        Private Bag X4010 Empumalanga<br/>
+                        Zip/Postal Code: 0458
+                    </address>
+                </td>
+            </tr>
+            <tr>
+                <td class="image"><img src="../pics/email.png" height="100">
+                </td>
+                <td>
+                    <div>Email</div>
+                    <address>
+                        Address: <a href="">nansidlela@school.com</a>
+                    </address>
+                </td>
+            </tr>
+
+        </table>
+
+        </article>
+<script>
+    //hovering of menu
+var menu = $("#hor li");
+for(let x=1; x<menu.length; x++){
+    menu.eq(x).mouseenter(function(){
+        $(this).css("filter", "grayscale(100%)");}
+    );
+    menu.eq(x).mouseleave(function(){
+        $(this).css("filter", "grayscale(0%)");}
+    );
+}
+</script>
+</body>
+</html>

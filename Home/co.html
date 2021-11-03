@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community Outreach</title>
+    <script src="jquery-3.5.1.js"></script>
+</head>
+<style>
+    body{background-image: url("../pics/community.jpg");
+        background-size: 100%;
+        color: white;
+        text-align: center;}
+    
+    h1{
+        text-align: center;
+    }    
+ 
+    
+   .details{
+   display: grid;
+   }
+   
+   .details img{
+    border: 2px solid orange;
+    border-radius: 40px;
+   }
+   
+   section{
+    
+    display: flex;
+    flex-direction: row;
+    width: 80%
+   }
+   
+   section .school{
+   margin-right: 20px;
+   margin-left: 20px;  
+   }
+   
+   .school p{
+        font-size: 18px; 
+   }
+   
+   section:nth-child(odd){
+    float: left
+   }
+   
+   section:nth-child(even){
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+    color: orange;
+   }
+</style>
+<body>
+<h1>Community outreach</h1>
+<main>
+<section >
+<div class="school">
+
+    <div class="details"><img src="../pics/donation1.jpg" height="200" width="200"/></div>
+    <div class="details">School: Nansidlela</div>
+    <div class="details">Location: Boekenouthoek</div>
+    <div class="details">Date: 20 October 2020</div>
+
+</div>
+<div class="school">
+    <p>Throught the week, Nansidlela senior secondary school, located at Boekenouthoek, decided to 
+    give away tomatoes that they have planted through out the year. This was done by the grade 12s,
+    a token  of appreciation to the community just before their prelims. These grade 12s clearly
+    know their roots.
+    </p>
+</div>
+</section>
+<section >
+<div class="school">
+
+    <div class="details"><img src="../pics/community1.jpg" height="200" width="200"/></div>
+    <div class="details">School: Dumeleng</div>
+    <div class="details">Location: Mathyzenloop</div>
+    <div class="details">Date: 28 December 2020</div>
+
+</div>
+<div class="school">
+    <p>After a very long year; Dumenleng secondary at Mathys-zen-loop decided to end the
+    year with a banger by giving away food parcels to kids a primary schools. This was a way
+    for them to show the kids which steps they should take growing up and making sure they 
+    idolise their brothers and sisters.
+    </p>
+</div>
+</section>
+</main>
+<script>
+
+
+</script>
+</body>
+</html>

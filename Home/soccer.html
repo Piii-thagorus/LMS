@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soccer</title>
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        .squad li{margin-top: 10px;
+        list-style-type: none;}
+
+        #heading td{min-width: 300px;}
+
+    </style>
+
+
+</head>
+<body>
+<h1 align="center">Soccer</h1>
+<table>
+    <tr id="heading">
+        <td><h1 align="center">Our soccer team</h1></td>
+        <td><h1 align="center">Formation</h1></td>
+    </tr>
+    <tr>
+        <td class="squad">
+
+            <h2 align="center">Goalkeeper</h2>
+            <ul>
+                <li>Unathi Mahlangu</li>
+                <li>Wiseman Ntuli</li>
+            </ul>
+
+        <h2 align="center">Defenders</h2>
+        <ul>
+            <li>Siyabonga</li>
+            <li>Bongani</li>
+            <li>Clifford</li>
+            <li>Surorise</li>
+            </ul>
+
+        <h2 align="center">Mid-Fielders</h2>
+        <ul>
+            <li>Thabiso</li>
+            <li>Thapelo</li>
+            <li>Vusi</li>
+        </ul>
+
+        <h2 align="center">Attackers</h2>
+        <ul>
+            <li>Given</li>
+            <li>Thokozani</li>
+            <li>Samkelo</li>
+        </ul>
+        </td>
+        <td align="center">
+            <svg width="500" height="500"><rect width="400" height="450" fill="green" x="90" y="0">
+            <svg width="500" height="500"><line x1="50" y1="0" x2="50" y2="0"
+            style="stroke: black"></line></svg>
+            </rect></svg>
+
+        </td>
+
+
+    </tr>
+</table>
+<script>
+    var pl = $(".squad li");
+    var x = 0;
+
+    var specs1 = {"border": "2px solid orange", "background":"orange",
+    "font-weight": "Bold", "color":"white", "text-align" :"center", "border-radius": "80px"};
+
+    var specs2 = {"border": "2px solid #b0e0e6", "background":"#b0e0e6",
+    "font-weight": "Bold", "color":"black", "text-align" :"center", "border-radius": "80px"};
+
+    while (x<pl.length){
+    if(x%2 === 0){
+    pl.eq(x).css(specs1);
+    }
+    else{
+    pl.eq(x).css(specs2);}
+    x++;
+    }
+</script>
+</body>
+</html>

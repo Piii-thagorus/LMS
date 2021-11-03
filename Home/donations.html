@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Donations</title>
+
+    <script src="jquery-3.5.1.js"></script>
+
+    <style>
+
+        body {
+            background-image: url("../pics/don.jpg");
+            background-size: 150%;
+        }
+
+        p {
+        color:white;
+        }
+
+        h1{text-align: center;
+        font-size: 50px;
+        color: #b0e0e6;
+        }
+
+        label {
+        font-weight: bold;
+        color: white;
+        font-size: 20px;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+
+         table{border-left: 10px solid orange;
+            border-radius: 100px;
+             border-right: 10px solid #b0e0e6;
+             }
+
+      input[type=text],
+      input[type=number],
+      input[type=password],
+      input[type=email],
+      #donate,
+      select{width: 500px;
+      padding: 15px;
+      margin: 5px 0px 22px 0px;
+      display: inline-block;
+      word-wrap: break-word;
+      background: #f1f1f1;
+      border: none;
+      //border-top: 5px solid #b0e0e6;
+      border-bottom: 5px solid orange;
+      border-radius: 50px;
+      background: transparent;
+      }
+
+
+      .container{padding: 16px;}
+
+      #proceed{background-color: orange;
+      border: 2px solid orange;
+      border-radius: 100px;
+      color: white;
+      border: none;
+      width: 50%;
+      padding: 16px 20px;
+      margin: 8px 0px;
+      cursor: pointer;
+      font-weight: bold;}
+      label{font-weight: bold;
+      opacity: 0.9}
+
+      #proceed:hover{filter:grayscale(100%);
+      }
+
+      input[type=text]:focus,
+      input[type=number]:focus,
+      input[type=password]:focus,
+      input[type=email]:focus,
+      #donate:focus,
+      select:focus{border: none;
+      border-bottom:5px solid;
+      border-top: 5px solid}
+
+    </style>
+</head>
+<body>
+    <h1>Donations</h1>
+    <p align="center">Your donations help us to grow as a school and help those who are in need to excel in their academics, sports and other ventures.</p>
+    <p align="center">Please fill in the form for your donations, we'll be in touch as soon as we can.</p>
+    <article>
+
+        <table align="center">
+            <tr>
+                <td style="font-weight: bold;" align="center">Donation section.
+                    <br/>
+                    <p style="font-weight: normal;">Your details are captured for communication reasons.</p>
+                    <hr/>
+                    </td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;"  align="center">Personal details, contacts and your donation.</td>
+            </tr>
+            <tr>
+                <td style="color: red;" align="center"><small>A red star means the field is compulsory *</small></td>
+            </tr>
+
+            <!--A table row for the form-->
+                <tr>
+                    <td align="center">
+                        <form method="post" action="../new.php">
+                            <label for="first name">First name.</label>
+                            <br/>
+                            <input type="text" name="first name" placeholder="Enter your first name" id="first name" required="required" autofocus="autofocus">
+                            <br/>
+                            <label for="middle name">Middle name/s.</label>
+                            <br/>
+                            <input type="text" name="middle name" placeholder="Enter your Middle name/s" id="middle name">
+                            <br/>
+                            <label for="surname">Surname.</label>
+                            <br/>
+                            <input type="text" placeholder="Enter surname" name="surname" id="surname" required="required">
+                            <br/>
+                            <label for="gender">Gender</label>
+                            <br/>
+                            <select id="gender" name="Gender" required="required">
+                                <option value="" selected="selected">Select your gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <br/>
+                            <label  for="nationality"><b>Are you South African?</b></label>
+                            <br/>
+                            <select id="nationality" name="Nationality" required="required">
+                                <option value="" selected="selected">Please select if you South Adrican or not</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <br/>
+                            <label for="identity">ID No. </label>
+                            <br/>
+                            <input type="text" name="identity" placeholder="Enter your ID number" id="identity" required="required">
+                            <br/>
+                            <label for="email">Email address.</label>
+                            <br/>
+                            <input type="email" name="email" placeholder="Enter email address" id="email" required="required">
+                            <br/>
+                            <label for="numbers">Cell phone numbers.</label>
+                            <br/>
+                            <input type="text" name="numbers"  required="required" placeholder="Enter your cell phone number" id="numbers">
+                            <br/>
+                            <label for="donate" class="textArea">Type in your donation</label>
+                            <br/>
+                            <textarea name = "donate" id="donate" required="required"></textarea>
+                            <br/>
+                            <button id="proceed">Proceed</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </article>
+
+<script>
+    //adding red asterisk to required input
+    var inp = $("input");
+    var lbl = $("label");
+    $(".textArea").prepend("<div style='color:red;'>*</div>");
+
+    for(var x=0; x<inp.length; x++) {
+    let req = inp.eq(x).attr("required");
+    if (req == "required") {
+        let i = 0;
+        while(i<=lbl.length){
+        if(inp.eq(x).attr("id") == lbl.eq(i).attr("for")){
+        lbl.eq(i).prepend("<div style='color:red;'>*</div>");}
+         i++;}
+    }
+    }
+
+    
+
+    //adding a red star to elements with select type
+    var selectElements = $("select");
+    for (let x = 0; x < selectElements.length; x++) {
+        let req = selectElements.eq(x).attr("required");
+        if (req == "required") {
+            let lbl = $("label");
+            let i = 0;
+            while (i < lbl.length) {
+                if (selectElements.eq(x).attr("id") == lbl.eq(i).attr("for")) {
+                    lbl.eq(i).prepend("<div style='color:red;'>*</div>");
+                }
+                i++;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
